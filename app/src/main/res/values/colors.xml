@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#FF6200EE</color>
+    <color name="on_primary">#FFFFFFFF</color>
+    <color name="secondary">#FF03DAC5</color>
+    <color name="surface">#FF121212</color>
+    <color name="on_surface">#FFFFFFFF</color>
+    <color name="background">#FF0D0D0D</color>
+    <color name="point_a_color">#FF4CAF50</color>
+    <color name="point_b_color">#FFF44336</color>
+    <color name="line_color">#FF03A9F4</color>
+    <color name="overlay_bg">#80000000</color>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">高速连点器</string>
+    <string name="accessibility_service_description">启用后模拟手指点击和滑动操作，实现自动连点和划线。</string>
+    <string name="start">开始</string>
+    <string name="stop">停止</string>
+    <string name="set_point_a">设置起点A</string>
+    <string name="set_point_b">设置终点B</string>
+    <string name="point_a_hint">起点A: (%d, %d)</string>
+    <string name="point_b_hint">终点B: (%d, %d)</string>
+    <string name="frequency">频率: %d Hz</string>
+    <string name="swipe_duration">单次滑动时长: %d ms</string>
+    <string name="service_not_connected">请先开启无障碍服务</string>
+    <string name="service_connected">无障碍服务已连接</string>
+    <string name="mode_tap">连点模式</string>
+    <string name="mode_swipe">划线模式</string>
+    <string name="not_running">未运行</string>
+    <string name="running">运行中...</string>
+    <string name="touch_overlay">触摸浮窗选点</string>
+    <string name="turbo_mode">极速模式(Shell)</string>
+    <string name="normal_mode">标准模式(Accessibility)</string>
+    <string name="cancel">取消</string>
+</resources>

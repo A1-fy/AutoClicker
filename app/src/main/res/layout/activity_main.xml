@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF0D0D0D"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="高速连点器"
+            android:textSize="28sp"
+            android:textColor="@color/on_surface"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Service status -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#1EFFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp">
+            <TextView android:id="@+id/serviceStatus"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/service_not_connected"
+                android:textColor="#FF9E9E9E" android:textSize="14sp" />
+            <Button android:id="@+id/openSettings"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="开启服务"
+                style="@style/Widget.Material3.Button.Tonal"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Mode tabs -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/modeTabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:tabTextColor="#FF9E9E9E"
+            app:tabSelectedTextColor="@color/primary"
+            app:tabIndicatorColor="@color/primary" />
+
+        <!-- Point selection -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="坐标设置"
+            android:textColor="#FFBBBBBB" android:textSize="16sp"
+            android:textStyle="bold" android:layout_marginBottom="12dp" />
+
+        <LinearLayout android:id="@+id/pointLayout"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#1EFFFFFF" android:padding="16dp">
+
+            <!-- Point A -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="12dp">
+                <TextView android:id="@+id/pointAText"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/point_a_hint"
+                    android:textColor="@color/point_a_color" android:textSize="16sp"
+                    android:layout_gravity="center_vertical" />
+                <Button android:id="@+id/setPointA"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/set_point_a"
+                    android:backgroundTint="@color/point_a_color"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Point B -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView android:id="@+id/pointBText"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/point_b_hint"
+                    android:textColor="@color/point_b_color" android:textSize="16sp"
+                    android:layout_gravity="center_vertical" />
+                <Button android:id="@+id/setPointB"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/set_point_b"
+                    android:backgroundTint="@color/point_b_color"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Parameters -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="参数设置"
+            android:textColor="#FFBBBBBB" android:textSize="16sp"
+            android:textStyle="bold" android:layout_marginTop="16dp"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#1EFFFFFF" android:padding="16dp">
+
+            <TextView android:id="@+id/frequencyLabel"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/frequency" android:textColor="#FFCCCCCC"
+                android:textSize="14sp" android:layout_marginBottom="4dp" />
+            <SeekBar android:id="@+id/frequencySeekBar"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="1000" android:progress="10"
+                android:layout_marginBottom="16dp" />
+
+            <TextView android:id="@+id/durationLabel"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/swipe_duration" android:textColor="#FFCCCCCC"
+                android:textSize="14sp" android:layout_marginBottom="4dp" />
+            <SeekBar android:id="@+id/durationSeekBar"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="500" android:progress="10"
+                android:layout_marginBottom="16dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="执行方式" android:textColor="#FFCCCCCC"
+                android:textSize="14sp" android:layout_marginBottom="8dp" />
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/executionModeGroup"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                app:singleSelection="true" android:layout_marginBottom="8dp">
+                <com.google.android.material.chip.Chip android:id="@+id/modeNormal"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/normal_mode"
+                    app:chipBackgroundColor="#1EFFFFFF" app:chipStrokeColor="@color/primary"
+                    app:chipTextColor="#FFCCCCCC" app:checkedChipTextColor="@color/on_primary"
+                    app:checkedIconVisible="false" />
+                <com.google.android.material.chip.Chip android:id="@+id/modeTurbo"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/turbo_mode"
+                    app:chipBackgroundColor="#1EFFFFFF" app:chipStrokeColor="#FFFF9800"
+                    app:chipTextColor="#FFCCCCCC" app:checkedChipTextColor="@color/on_primary"
+                    app:checkedIconVisible="false" />
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
+
+        <Button android:id="@+id/startStopButton"
+            android:layout_width="match_parent" android:layout_height="56dp"
+            android:layout_marginTop="24dp" android:text="@string/start"
+            android:textSize="18sp" android:textStyle="bold"
+            android:backgroundTint="@color/primary" />
+
+        <TextView android:id="@+id/statusText"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/not_running" android:textColor="#FF9E9E9E"
+            android:textSize="14sp" android:gravity="center"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+</ScrollView>
